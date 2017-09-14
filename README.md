@@ -9,7 +9,7 @@
 2. Create a file `hmr.ts` at src/hmr.ts to define the configuration
 ```typescript
   import { NgModuleRef, ApplicationRef } from '@angular/core';
-   import { createNewHosts } from '@angularclass/hmr';
+  import { createNewHosts } from '@angularclass/hmr';
 
 export const hmrBootstrap = (module: any, bootstrap: () => Promise<NgModuleRef<any>>) => {
   let ngModule: NgModuleRef<any>;
@@ -22,11 +22,11 @@ export const hmrBootstrap = (module: any, bootstrap: () => Promise<NgModuleRef<a
     ngModule.destroy();
     makeVisible();
   });
-};`
+};
 ```
 3. Update main.ts to use hmr.ts. Refer main.ts
 ```typescript
-`import { hmrBootstrap } from './hmr';
+ import { hmrBootstrap } from './hmr';
  import { environment } from './environments/environment';
 
   if (environment.hmr) {
@@ -47,8 +47,8 @@ export const environment = {
 In enviroment.prod.ts; set hmr to false
 ```typescript
 export const environment = {
- production: false,
- hmr: true
+ production: true,
+ hmr: false
 }
  ```
 
@@ -60,5 +60,5 @@ export const environment = {
       "dev": "environments/environment.ts",
       "hmr": "environments/environment.hmr.ts",
       "prod": "environments/environment.prod.ts"
-    },`
+    },
   ```
